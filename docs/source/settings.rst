@@ -185,9 +185,10 @@ graceful_timeout
 
 Timeout for graceful workers restart.
 
-Generally set to thirty seconds. How max time worker can handle
-request after got restart signal. If the time is up worker will
-be force killed.
+Generally set to thirty seconds. After reciving a restart signal,
+workers have this much time to finish serving requests. Workers still
+alive after the timeout (starting from the receipt of the restart signal)
+are force killed.
 
 keepalive
 ~~~~~~~~~
